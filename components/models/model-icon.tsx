@@ -10,6 +10,7 @@ import { FC, HTMLAttributes } from "react"
 import { AnthropicSVG } from "../icons/anthropic-svg"
 import { GoogleSVG } from "../icons/google-svg"
 import { OpenAISVG } from "../icons/openai-svg"
+import { DeepSeekSVG } from "../icons/deepseek-svg"
 
 interface ModelIconProps extends HTMLAttributes<HTMLDivElement> {
   provider: ModelProvider
@@ -97,6 +98,20 @@ export const ModelIcon: FC<ModelIconProps> = ({
           )}
           src={perplexity.src}
           alt="Mistral"
+          width={width}
+          height={height}
+        />
+      )
+    case "deepseek":
+      return (
+        <DeepSeekSVG
+          className={cn(
+            "rounded-sm bg-white p-1",
+            props.className,
+            theme === "dark"
+              ? "bg-white text-[#000000]"
+              : "border-DEFAULT border-black text-[#000000]"
+          )}
           width={width}
           height={height}
         />
